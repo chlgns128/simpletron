@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sim.mybatis.UserMapper">
+
+	<insert id="insert" parameterType="User">
+		INSERT INTO member VALUES
+		(#{id}, #{passwd}, #{email}, #{nick})
+	</insert>
+
+	<select id="login" resultType="User">
+		SELECT id, passwd, email, nick
+		FROM member
+		WHERE id = #{id} AND passwd = #{passwd}
+	</select>
+
+	<update id="modify" parameterType="User">
+		UPDATE member SET nick =
+		#{nick}
+		WHERE id = #{id}
+	</update>
+
+	<update id="changePasswd" parameterType="User">
+		UPDATE member SET passwd
+		= #{passwd} WHERE id = #{id}
+	</update>
+
+	<delete id="byeMember" parameterType="User">
+		DELETE FROM member WHERE
+		id = #{id}
+	</delete>
+
+</mapper>

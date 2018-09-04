@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+	<typeAliases>
+		<typeAlias type="com.sim.user.User" alias="User" />
+		<typeAlias type="com.sim.board.Board" alias="Board" />
+		<typeAlias type="com.sim.board.Article" alias="Article" />
+		<typeAlias type="com.sim.board.AttachFile"
+			alias="AttachFile" />
+		<typeAlias type="com.sim.board.Comment" alias="Comment" />
+		<typeAlias type="com.sim.board.SimpleTron" alias="Simpletron" />
+	</typeAliases>
+
+	<mappers>
+		<mapper resource="com/sim/mybatis/UserMapper.xml" />
+		<mapper resource="com/sim/mybatis/BoardMapper.xml" />
+	</mappers>
+
+</configuration>
